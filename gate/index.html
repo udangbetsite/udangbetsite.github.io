@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Mengalihkan...</title>
+</head>
+<body>
+  <p>Sedang mengalihkan, mohon tunggu... Jika tidak otomatis, <a id="link" href="https://udangbet77vv.com/?refferal=Iklanbnr">klik di sini</a>.</p>
+
+  <script>
+    (function () {
+      var FALLBACK_URL = "https://udangbet77vv.com/?refferal=Iklanbnr";
+
+      function redirectTo(url) {
+        var link = document.getElementById("link");
+        if (link) link.href = url;
+        window.location.replace(url);
+      }
+
+      fetch("/site.json")
+        .then(function (res) { return res.json(); })
+        .then(function (data) { redirectTo(data.url || FALLBACK_URL); })
+        .catch(function () { redirectTo(FALLBACK_URL); });
+    })();
+  </script>
+</body>
+</html>
